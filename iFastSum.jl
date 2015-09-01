@@ -17,7 +17,7 @@ function iFastSum{T<:Real}(x::Array{T,1})
     rc = 0
     n = length(x)
     xs = Array{T,1}(n) # iFastSumAlgorithm is destructive
-    xs[:] = x[:]
+    copy!(xs, x)
     iFastSumAlgorithm(xs, n)
 end
 
