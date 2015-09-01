@@ -15,7 +15,10 @@ rc = 0 # indicates if a recursive call of iFastSumAlgorithm occurs
 function iFastSum{T<:Real}(x::Array{T,1})
     global rc;
     rc = 0
-    iFastSumAlgorithm(x, length(x))
+    n = length(x)
+    xx = Array{T,1}(n)
+    xx[:] = x[:]
+    iFastSumAlgorithm(x, n)
 end
 
 
