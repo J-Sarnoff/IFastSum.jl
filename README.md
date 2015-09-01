@@ -13,4 +13,4 @@ This should work correctly for vectors of any size.  The time used relative to s
 
 "Some Highly Accurate Basic Linear Algebra Subroutines"
 by Yuhang Zhao (c) 2010
-McMaster University, Hamilton, Canada
+McMaster University, Canada
