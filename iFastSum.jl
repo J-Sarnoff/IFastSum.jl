@@ -12,6 +12,15 @@
 
 rc = 0 # indicates if a recursive call of iFastSumAlgorithm occurs
 
+function iFastSum{T<:Real}(x::Array{T,1})
+    global rc;
+    rc = 0
+    n = length(x)
+    xs = Array{T,1}(n) # iFastSumAlgorithm is destructive
+    xs[:] = x[:]
+    iFastSumAlgorithm(xs, n)
+end
+
 @inline function AddTwo{T<:Real}(a::T, b::T)
     x = a+b
     z = x-a
@@ -79,15 +88,6 @@ function iFastSumAlgorithm{T<:Real}(x::Array{T,1},n::Int)
              return s
         end
     end
-end
-
-function iFastSum{T<:Real}(x::Array{T,1})
-    global rc;
-    rc = 0
-    n = length(x)
-    xx = Array{T,1}(n) # iFastSumAlgorithm is destructive
-    xx[:] = x[:]
-    iFastSumAlgorithm(x, n)
 end
 
 
