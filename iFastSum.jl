@@ -87,4 +87,3 @@ function iFastSumAlgorithm{T<:Real}(x::Array{T,1},n::Int)
         end
     end
 end
-
