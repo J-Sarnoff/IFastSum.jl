@@ -10,11 +10,11 @@
    comments are as they appear in the thesis
 =#
 
-rc = 0 # indicates if a recursive call of iFastSumAlgorithm occurs
+rc = Ref{Int}(0) # indicates if a recursive call of iFastSumAlgorithm occurs
 
 function iFastSum{T<:Real}(x::Array{T,1})
     global rc;
-    rc = 0
+    rc[] = 0
     n = length(x)
     xs = Array{T,1}(n) # iFastSumAlgorithm is destructive
     copy!(xs, x)       # thanks to Kristoffer Carlsson
