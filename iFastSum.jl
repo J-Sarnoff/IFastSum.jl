@@ -72,7 +72,7 @@ function iFastSumAlgorithm{T<:Real}(x::Array{T,1},n::Int)
         n = count
         # (5)
         if (em==zero(T) || em < eps(s)*0.5)
-            if rc > 0
+            if rc[] > 0
                 return s # return s if it is a recursive call
             end
             w1, e1 = AddTwo(st, em)
